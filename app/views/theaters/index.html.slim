@@ -1,0 +1,39 @@
+<div class="card" style="width:70rem; text-align: center; ">
+<div class="card-body" style="width:70rem; position: center; ">
+    div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"
+      div class="carousel-indicators"
+        button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"
+        button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"
+        button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"
+      div class="carousel-inner"
+        div class="carousel-item active"
+          = image_tag "uriBaner.jpeg", class:"d-block w-100"  
+        div class="carousel-item"
+          = image_tag "tanhajiBAner.jpeg", class:"d-block w-100"
+        div class="carousel-item"
+          = image_tag "GolmalBAner.jpg", class:"d-block w-100" 
+        button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev"
+          span class="carousel-control-prev-icon" aria-hidden="true"
+          span class="visually-hidden" Previous
+        button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next"
+          span class="carousel-control-next-icon" aria-hidden="true"
+          span class="visually-hidden" Next
+
+<div class="card" style="width:69rem; text-align: center; ">
+  <div class="card-body " style="width:65rem; position: center; ">
+    div class="row"
+      - @theaters.each do |f|
+        div class="col-3" style="margin-top: 50px"
+          div class="card"
+            -if f.image.attached?
+              = image_tag f.image, class:"card-img-top", style:"height:300px;width:auto;"
+            -else
+              = 0
+          div class="card-body"
+          h4 = f.name
+          = link_to "Theater Details", theater_path(f), class: "btn btn-warning"
+
+      
+    
+
+  

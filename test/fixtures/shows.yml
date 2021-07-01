@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  movie: one
+  screen: one
+  amount: 1
+  date: 2021-07-01
+  time: 2021-07-01 13:02:12
+
+two:
+  movie: two
+  screen: two
+  amount: 1
+  date: 2021-07-01
+  time: 2021-07-01 13:02:12

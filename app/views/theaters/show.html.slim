@@ -1,0 +1,24 @@
+<div class="card" style="width:70rem; text-align: center; ">
+<div class="card-body " style="width:70rem; position: center; ">
+
+div class="row"
+ 
+div class="card"
+div class="card-body item-align-center"
+  -if @theater.image.attached?
+    = image_tag @theater.image, style:"height:200px;width:200px; "
+  -else
+    = 0
+h4= @theater.name
+div
+= "City: #{@theater.city.name}"  
+div
+= "Pincode: #{@theater.pincode}"
+div  
+= link_to "See Available Shows", theater_shows_path(@theater.id) ,class:"btn btn-warning"
+
+      
+
+
+
+

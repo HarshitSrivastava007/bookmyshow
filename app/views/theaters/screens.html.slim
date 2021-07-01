@@ -1,0 +1,30 @@
+<div class="card" style="width:70rem; text-align: center; ">
+<div class="card-body " style="width:70rem; position: center; ">
+
+div class="row"
+  - @screens.each do |f|
+    br
+    - f.shows.each do |m|
+      h2 = f.name
+      div class="card"
+        div class="card-body item-align-center"
+          -if m.movie.image.attached?
+            = image_tag m.movie.image, style:"height:200px;width:200px; "
+          -else
+            = 0
+        h4= m.movie.name
+        div
+        = "Date: #{m.date.strftime("%B %-d, %Y")}"  
+        div
+        = "Time: #{m.time.strftime("%I:%M %p")}"
+        div
+        = "Language: #{m.movie.language}"  
+        div
+        = "Runtime: #{m.movie.runtime} mins"  
+
+        = link_to "Book @#{m.amonut} Rs", '#' ,class:"btn btn-warning"
+
+          
+
+
+

@@ -1,0 +1,55 @@
+<div class="card-center" style="width:30rem; text-align: center; ">
+  <div class="card-body" style="width:70rem; position: center; ">
+
+  <div class="d-flex justify-content-center h-100">
+      <div class="card_login">
+        <div class="card-header">
+          <h2>Sign Up</h2>
+        </div>
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "users/shared/error_messages", resource: resource %>
+        
+          <div class="field">
+            <%= f.label :name %><br />
+            <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+          </div>
+        
+          <div class="field">
+            <%= f.label :city %><br />
+            <%= f.text_field :city, autofocus: true, autocomplete: "city" %>
+          </div>
+        
+          <div class="field">
+            <%= f.label :phone %><br />
+            <%= f.text_field :phone, autofocus: true, autocomplete: "phone" %>
+          </div>
+        
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          </div>
+        
+          <div class="field">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "new-password" %>
+          </div>
+        
+          <div class="field">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+          </div>
+        
+          <div class="actions">
+            <%= f.submit "Sign up",class:"btn btn-warning" %>
+          </div>
+        <% end %>
+        
+        <%= render "users/shared/links" %>
+        
+        
+      </div>
+  </div>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookmymovie</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        
+        <div>
+        <a href="/" class="pull-left">
+        <%= image_tag "—Pngtree—record board the film movie_3940116.png",style:"width: 70px; height:90px" %>
+        <a class="navbar-brand" href='/'>BookmyMovie</a>
+        </div>
+    
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div>
+          <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-warning" type="submit">Search</button>
+          </form>
+        </div>
+
+        
+
+        <div class="dropdown">
+          <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Select City 
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            # - @cities.each do |f|
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+
+        <div>
+            <% if user_signed_in? %>
+              <%= link_to current_user.name, edit_user_registration_path, :class => 'btn btn-warning' %> 	&nbsp;	&nbsp;
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-warning'  %>
+            <% else %>
+              <%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-warning'  %> &nbsp;	 &nbsp;
+              <%= link_to "Login", new_user_session_path, :class => 'btn btn-warning'  %>
+            <% end %>
+
+        </div>
+      </div>    
+    </nav>
+
+    <div class="container">
+    <div>
+    <p></p><div>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<div class="card" style="width:70rem; text-align: center; ">
+<div class="card-body " style="width:70rem; position: center; ">
+
+div class="row"
+  - @screens.each do |f|
+    br
+    - f.shows.each do |m|
+      h2 = f.name
+      div class="card"
+        div class="card-body item-align-center"
+          -if m.movie.image.attached?
+            = image_tag m.movie.image, style:"height:200px;width:200px; "
+          -else
+            = 0
+        h4= m.movie.name
+
+        = link_to "See Details", theater_show_path(@theater,m) ,class:"btn btn-warning"
+
+
+          
+
+
+
+
+

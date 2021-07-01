@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-sm-3">
+      -if @theater.image.attached?
+        = image_tag @theater.image, style:"height:200px;width:200px; "
+      -else
+        = 0 
+      h3= @theater.name
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          = link_to "Screens", theater_admin_theater_screens_path(@theater.id), class: "btn btn-warning nav-link  "
+        </li>
+        <li class="nav-item">
+          = link_to "Shows", "#", class: "btn btn-warning nav-link"
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-warning nav-link" href="#">Bookings</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-warning nav-link" href="#">Payments</a>
+        </li>
+      </ul>
+      <hr class="d-sm-none">
+    </div>

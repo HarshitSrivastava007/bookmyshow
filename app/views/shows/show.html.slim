@@ -1,0 +1,40 @@
+<div class="card" style="width:70rem; text-align: center; ">
+<div class="card-body " style="width:70rem; position: center; ">
+
+div class="row"
+      h2 = @show.movie.name
+      div class="card"
+        div class="card-body item-align-center"
+          -if @show.movie.image.attached?
+            = image_tag @show.movie.image, style:"height:200px;width:200px; "
+          -else
+            = 0
+        h4= @show.movie.name
+        div
+        = "Show Date: #{@show.date.strftime("%B %-d, %Y")}"  
+        div
+        = "Show Time: #{@show.time.strftime("%I:%M %p")}"
+        div
+        = "Language: #{@show.movie.language}"  
+        div
+        = "Runtime: #{@show.movie.runtime} mins"  
+
+        = link_to "Book @#{@show.amount} Rs", '#' ,class:"btn btn-warning"
+
+          
+
+
+
+
+
+
+        
+        
+        
+        
+
+          
+
+
+
+
