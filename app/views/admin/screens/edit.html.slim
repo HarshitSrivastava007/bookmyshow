@@ -1,0 +1,10 @@
+<div class="card" style="width:72rem; text-align: center; ">
+<div class="card-body" style="width:70rem; position: center;">
+  h1 Screen Edit
+  =form_for @screen ,url:admin_screen_path(@screen.id) do |f|
+    div class="mb-3"
+      = f.text_field :name, class: "form-control col-6", placeholder: "Enter Screen"
+    div class="mb-3"
+      = f.text_field :seats, class: "form-control col-12", placeholder: "Seats"
+    div class="mb-3"   
+      = f.button :submit, :class => "btn btn-warning"

@@ -1,0 +1,29 @@
+<div class="card" style="width:72rem; text-align: center; ">
+<div class="card-body" style="width:70rem; position: center;">
+  h3 Edit Shows
+  div
+    = form_for @show, url:admin_show_path(@show.id) do |f|
+      = f.label :screen_id
+      = f.text_field :screen_id
+      br
+      br
+      = f.label :movie_id
+      = f.text_field :movie_id
+      br
+      br
+      = f.label :date
+      = f.text_field :date
+      br
+      br
+      = f.label :time 
+      = f.text_field :time
+      br
+      br
+      = f.label :amount
+      = f.text_field :amount
+      br
+      = f.button :Update, :class => "btn btn-warning"
+
+      
+
+      

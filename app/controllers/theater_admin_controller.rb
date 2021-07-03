@@ -9,7 +9,6 @@ class TheaterAdminController < ApplicationController
     @theater = @theateradmin.theater
     @screens = @theater.screens
     @screen = Screen.new
-
   end
 
 
@@ -27,7 +26,6 @@ class TheaterAdminController < ApplicationController
     @theateradmin = TheaterAdmin.where(user: current_user).first
     @screens = @theateradmin.theater.screens
     @screen = Screen.find params[:id]
-    
     redirect_to :theater_admin_create_screen_path
   end
 

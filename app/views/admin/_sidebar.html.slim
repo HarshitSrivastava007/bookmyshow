@@ -7,16 +7,16 @@
       h3= @theater.name
       <ul class="nav nav-pills flex-column">
         <li class="nav-item">
-          = link_to "Screens", theater_admin_theater_screens_path(@theater.id), class: "btn btn-warning nav-link  "
+          = link_to "Screens", admin_screens_path, class: "btn btn-warning nav-link  "
         </li>
         <li class="nav-item">
-          = link_to "Shows", "#", class: "btn btn-warning nav-link"
+          = link_to "Shows", admin_shows_path, class: "btn btn-warning nav-link"
         </li>
         <li class="nav-item">
-          <a class="btn btn-warning nav-link" href="#">Bookings</a>
+          = link_to "Bookings", admin_bookings_path, class: "btn btn-warning nav-link  "
         </li>
         <li class="nav-item">
-          <a class="btn btn-warning nav-link" href="#">Payments</a>
+          = link_to "Shows", admin_shows_path, class: "btn btn-warning nav-link"
         </li>
       </ul>
       <hr class="d-sm-none">

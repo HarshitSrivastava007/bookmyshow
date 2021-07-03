@@ -27,24 +27,14 @@
 
         <div>
           <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <input class="form-control me-2" type="search" placeholder="Search By Movie" aria-label="Search">
             <button class="btn btn-warning" type="submit">Search</button>
           </form>
         </div>
 
         
 
-        <div class="dropdown">
-          <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            Select City 
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            # - @cities.each do |f|
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </div>
+        
 
         <div>
             <% if user_signed_in? %>

@@ -1,6 +1,7 @@
 class TheatersController < ApplicationController
   def index
     @theaters = Theater.all
+    @cities = City.all
   end
 
 
@@ -16,6 +17,11 @@ class TheatersController < ApplicationController
 
   # def seat
   # end
+
+  def seat
+    @show = Show.find(1)
+    puts @show.inspect
+  end
 
 
 end

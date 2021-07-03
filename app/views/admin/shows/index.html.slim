@@ -1,0 +1,55 @@
+<div class="card" style="width:72rem; text-align: center; ">
+<div class="card-body" style="width:70rem; position: center;">
+h1 Shows
+div class="row"
+=render '/admin/sidebar'
+<div class="col-9">
+  table.table 
+    thead
+      tr
+        th scope="col" Name
+        th scope="col" Screen
+        th scope="col" Date
+        th scope="col" Time 
+        th scope="col" Runtime
+        th scope="col" Amount
+        th scope="col" Edit
+        th scope="col" Delete
+    tbody 
+      -@screens.each do |s|
+        -s.shows.each do |m|
+          tr
+            td= m.movie.name 
+            td= m.screen.name
+            td= m.date
+            td= m.time 
+            td= m.movie.runtime 
+            td= m.amount
+            td= link_to "",edit_admin_show_path(m),method:"GET",class:"fas fa-edit"
+            td= link_to "",admin_show_path(m),method:"DELETE",class:"fas fa-trash-alt"
+<div class="card" style="width:50rem; text-align: center; ">
+h3 Add Shows
+= form_for @show, url:admin_shows_path(@screen) do |f|
+  = f.label :screen_id
+  = f.text_field :screen_id
+  br
+  br
+  = f.label :movie_id
+  = f.text_field :movie_id
+  br
+  br
+  = f.label :date
+  = f.text_field :date
+  br
+  br
+  = f.label :time 
+  = f.text_field :time
+  br
+  br
+  = f.label :amount
+  = f.text_field :amount
+  div class="mb-3" 
+    = f.button :submit, :class => "btn btn-warning"
+
+
+
