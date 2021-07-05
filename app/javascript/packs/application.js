@@ -10,6 +10,11 @@ import "channels"
 import "bootstrap"
 import "../stylesheets/application"
 
+// If you are using `import` syntax
+// import '@client-side-validations/client-side-validations'
+
+
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

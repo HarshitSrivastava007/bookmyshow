@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.create(booking_params)
     if @booking.save
-      redirect_to
+      render :index
     end
   end
 

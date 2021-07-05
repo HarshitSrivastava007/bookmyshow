@@ -1,28 +1,28 @@
-<div class="card" style="width:72rem; text-align: center; ">
-<div class="card-body" style="width:70rem; position: center;">
-h3 Bookings
-div class="row"
-=render '/admin/sidebar'
-<div class="col-9">
-  table.table
-    thead
-      tr
-        th scope="col" Movie Name
-        th scope="col" User Name
-        th scope="col" Seats
-        th scope="col" Status     
-    tbody
-      -@screens.each do |f|
-        -f.shows.each do |s|
-          -s.bookings.each do |b|
-            tr
-              td= b.show.movie.name
-              td= b.user.name
-              td= b.seats
-              td 
-                -if b.is_confirm = true
-                  = "Succesful"
-    
+div class="card" style="width:72rem; text-align: center; "
+  div class="card-body" style="width:70rem; position: center;"
+  h3 Bookings
+  div class="row"
+  =render '/admin/sidebar'
+  div class="col-9"
+    table.table
+      thead
+        tr
+          th scope="col" Movie Name
+          th scope="col" User Name
+          th scope="col" Seats
+          th scope="col" Status     
+      tbody
+        -@screens.each do |f|
+          -f.shows.each do |s|
+            -s.bookings.each do |b|
+              tr
+                td= b.show.movie.name
+                td= b.user.name
+                td= b.seats
+                td 
+                  -if b.is_confirm = true
+                    = "Succesful"
+      
               
 
               

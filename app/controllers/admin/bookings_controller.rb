@@ -3,7 +3,6 @@ class Admin::BookingsController < ApplicationController
     @theateradmin = TheaterAdmin.where(user: current_user).first
     @theater = @theateradmin.theater
     @screens = @theater.screens
-    # @screen = Screen.new
   end
 
 end

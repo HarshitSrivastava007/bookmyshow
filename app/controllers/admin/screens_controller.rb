@@ -12,10 +12,14 @@ class Admin::ScreensController < ApplicationController
 
   def create
     @theateradmin = TheaterAdmin.where(user: current_user).first
+    @theater = @theateradmin.theater
     @screen = Screen.create(screen_params)
     if @screen.save
       redirect_to admin_screens_path
+    else
+      render :index
     end
+      
   end
 
   def edit
