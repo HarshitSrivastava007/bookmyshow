@@ -14,7 +14,7 @@ div class="row"
             = 0
         h4= m.movie.name
 
-        = link_to "See Details", theater_show_path(@theater,m) ,class:"btn btn-warning"
+        = link_to "Book @#{m.amount} Rs", theater_show_path(@theater,m) ,class:"btn btn-warning"
 
 
           

@@ -4,8 +4,12 @@ one:
   show: one
   user: one
   is_confirm: false
+  seats: MyString
+  amount: 1
 
 two:
   show: two
   user: two
   is_confirm: false
+  seats: MyString
+  amount: 1

@@ -7,12 +7,14 @@ class ShowsController < ApplicationController
   def show
     @theater = Theater.find(params[:theater_id])
     @show = Show.find(params[:id])
-  end
+    @booking = Booking.new
 
-  # def seats
-  #   @theater = Theater.find(params[:theater_id])
-  #   @screen = @theater.screens
-  #   @show = Show.find(params[:id])
-  # end
+    @booking_seat = []
+    @show.bookings.each do |s|
+      @booking_seat += s.seats.split(",").to_a.map(&:to_i)
+    end
+    @booking = Booking.new
+    puts @booking_seat
+  end
 
 end

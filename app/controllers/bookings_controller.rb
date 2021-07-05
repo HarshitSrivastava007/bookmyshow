@@ -5,13 +5,14 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.create(booking_params)
-    @booking.save
-    
+    if @booking.save
+      redirect_to
+    end
   end
 
 
   def booking_params
-    params.require(:show).permit(:show_id, :user_id, :is_confirm)
+    params.require(:booking).permit(:show_id, :user_id, :is_confirm, :seats ,:amount)
   end
 
 end

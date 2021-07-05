@@ -1,10 +1,14 @@
-<div class="card" style="width:70rem; text-align: center; ">
 <div class="card-body " style="width:70rem; position: center; ">
+  <marquee>
+  <h3><font family="TimesNewRoman" color="dark violet"><b>Welcome to BookMyMovie!! Happy Watching!!</b></font></h3> </marquee>
+<div class="card" style="width:70rem; text-align: center; ">
+<div class="card-body " style="width:70rem; position: center;  ">
+
+input type="hidden" value=@booking_seat id="booking_seat"
 
 div class="row"
-      h2 = @show.movie.name
       div class="card"
-        div class="card-body item-align-center"
+        div class="card-body"
           -if @show.movie.image.attached?
             = image_tag @show.movie.image, style:"height:200px;width:200px; "
           -else
@@ -19,11 +23,11 @@ div class="row"
         div
         = "Runtime: #{@show.movie.runtime} mins"  
         div
-        = "Book @#{@show.amount} Rs"
+        = "Book @#{@show.amount} Rs" 
+        
 br
-
-<div class="card" style="width:69rem; text-align: center; ">
-  <div class="card-body " style="width:70rem; position: center; ">
+<div class="card" style="width:67rem; text-align: center; box-shadow: 2px 2px 4px #000000;">
+  <div class="card-body " style="width:65rem; position: center; ">
  
   = image_tag "screenthumb.png"
     = "Number of Seat: #{@screen.seats}"
@@ -34,221 +38,240 @@ br
       button type="checkbox" class="btn btn-outline-danger disabled" Empty
       button type="button" class="btn btn-danger disabled" Selected
       button type="button" class="btn btn-success disabled" Occupied
-  h6 You Have selected <span id="count">0</span> seats for a Price of $<span id="total">0</span>
+  h6 You Have selected <span id="count" style="color:yellow">0</span> 
+  h6 Total Price $<span id="total" style="color:yellow">0</span> 
          
   input type="hidden" value=@show.amount id="amount"   
 
 
   <div class="row">
     <div class="col-sm-3">
-    <div class="card" style="width:68rem;height:30rem; text-align: center;">
+    <div class="card" style="width:65rem;height:30rem; text-align: center;">
       h3 = "Please Select Seats"
       div class="seats_container"  
-        div class="col-" style="margin-top: 20px"
+        div class="col-" style="margin-top: 20px; "
           <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
           
           <input type="checkbox" class="btn-check" id="btncheck1" value="1" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck1"> 1</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck1" for="btncheck1"> 1</label>
 
           <input type="checkbox" class="btn-check" id="btncheck2" value="2" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck2"> 2</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck2" for="btncheck2"> 2</label>
 
-          <input type="checkbox" class="btn-check" id="btncheck3" value="3" autocomplete="off">
-          <label class="btn btn-success disabled" for="btncheck3"> 3</label>
+          <input type="checkbox" class="btn-check" disabled="disabled" id="btncheck3" value="3" autocomplete="off">
+          <label class="btn btn-success" id="labelbtncheck3" for="btncheck3"> 3</label>
 
           <input type="checkbox" class="btn-check" id="btncheck4" value="4" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck4"> 4</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck4" for="btncheck4"> 4</label>
         
         div class="col-" style="margin-top: 20px"
           <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
           
           <input type="checkbox" class="btn-check" id="btncheck5" value="5" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck5"> 5</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck5" for="btncheck5"> 5</label>
 
           <input type="checkbox" class="btn-check" id="btncheck6" value="6"autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck6"> 6</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck6" for="btncheck6"> 6</label>
 
           <input type="checkbox" class="btn-check" id="btncheck7" value="7" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck7"> 7</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck7" for="btncheck7"> 7</label>
 
           <input type="checkbox" class="btn-check" id="btncheck8" value="8" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck8"> 8</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck8" for="btncheck8"> 8</label>
 
           <input type="checkbox" class="btn-check" id="btncheck9" value="9" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck9"> 9</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck9" for="btncheck9"> 9</label>
 
           <input type="checkbox" class="btn-check" id="btncheck10" value="10" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck10"> 10</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck10" for="btncheck10"> 10</label>
 
           <input type="checkbox" class="btn-check" id="btncheck11" value="11" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck11"> 11</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck11" for="btncheck11"> 11</label>
 
           <input type="checkbox" class="btn-check" id="btncheck12" value="12" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck12"> 12</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck12" for="btncheck12"> 12</label>
 
           <input type="checkbox" class="btn-check" id="btncheck13" value="13" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck13"> 13</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck13" for="btncheck13"> 13</label>
 
         div class="col-" style="margin-top: 20px"
           <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
           
-          <input type="checkbox" class="btn-check" id="btncheck14" value="4" autocomplete="off">
-          <label class="btn btn-success disabled" for="btncheck14"> 14</label>
+          <input type="checkbox" class="btn-check" disabled="disabled" id="btncheck14" value="14" autocomplete="off">
+          <label class="btn btn-success" id="labelbtncheck14" for="btncheck14"> 14</label>
 
           <input type="checkbox" class="btn-check" id="btncheck15" value="15" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck15"> 15</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck15" for="btncheck15"> 15</label>
 
           <input type="checkbox" class="btn-check" id="btncheck16" value="16" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck16"> 16</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck16" for="btncheck16"> 16</label>
 
           <input type="checkbox" class="btn-check" id="btncheck17" value="17" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck17"> 17</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck17" for="btncheck17"> 17</label>
 
           <input type="checkbox" class="btn-check" id="btncheck18" value="18" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck18"> 18</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck18" for="btncheck18"> 18</label>
 
           <input type="checkbox" class="btn-check" id="btncheck19" value="19" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck19"> 19</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck19" for="btncheck19"> 19</label>
 
           <input type="checkbox" class="btn-check" id="btncheck20" value="20" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck20"> 20</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck20" for="btncheck20"> 20</label>
 
           <input type="checkbox" class="btn-check" id="btncheck21" value="21" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck21"> 21</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck21" for="btncheck21"> 21</label>
 
           <input type="checkbox" class="btn-check" id="btncheck22" value="22" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck22"> 22</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck22" for="btncheck22"> 22</label>
 
 
         div class="col-" style="margin-top: 20px"
           <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
           
           <input type="checkbox" class="btn-check" id="btncheck23" value="23" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck23"> 23</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck23" for="btncheck23"> 23</label>
 
           <input type="checkbox" class="btn-check" id="btncheck24" value="24" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck24"> 24</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck24" for="btncheck24"> 24</label>
 
           <input type="checkbox" class="btn-check" id="btncheck25" value="25" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck25"> 25</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck25" for="btncheck25"> 25</label>
 
           <input type="checkbox" class="btn-check" id="btncheck26" value="26" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck26"> 26</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck26" for="btncheck26"> 26</label>
 
           <input type="checkbox" class="btn-check" id="btncheck27" value="27" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck27"> 27</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck27" for="btncheck27"> 27</label>
 
           <input type="checkbox" class="btn-check" id="btncheck28" value="28" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck28"> 28</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck28" for="btncheck28"> 28</label>
 
           <input type="checkbox" class="btn-check" id="btncheck29" value="29" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck29"> 29</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck29" for="btncheck29"> 29</label>
 
           <input type="checkbox" class="btn-check" id="btncheck30" value="30" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck30"> 30</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck30" for="btncheck30"> 30</label>
 
           <input type="checkbox" class="btn-check" id="btncheck31" value="31" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck31"> 31</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck31" for="btncheck31"> 31</label>
 
 
         div class="col-" style="margin-top: 20px"
           <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
           
           <input type="checkbox" class="btn-check" id="btncheck32" value="32" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck32"> 32</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck32" for="btncheck32"> 32</label>
 
           <input type="checkbox" class="btn-check" id="btncheck33" value="33" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck33"> 33</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck33" for="btncheck33"> 33</label>
 
           <input type="checkbox" class="btn-check" id="btncheck34" value="34" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck34"> 34</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck34" for="btncheck34"> 34</label>
 
           <input type="checkbox" class="btn-check" id="btncheck35" value="35" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck35"> 35</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck35" for="btncheck35"> 35</label>
 
           <input type="checkbox" class="btn-check" id="btncheck36" value="36" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck36"> 36</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck36" id="labelbtncheck36" for="btncheck36"> 36</label>
 
           <input type="checkbox" class="btn-check" id="btncheck37" value="37" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck37"> 37</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck37" for="btncheck37"> 37</label>
 
           <input type="checkbox" class="btn-check" id="btncheck38" value="38" autocomplete="off">
           <label class="btn btn-outline-danger" for="btncheck38"> 38</label>
 
           <input type="checkbox" class="btn-check" id="btncheck39" value="39" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck39"> 39</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck39" for="btncheck39"> 39</label>
 
           <input type="checkbox" class="btn-check" id="btncheck40" value="40" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck40"> 40</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck40" for="btncheck40"> 40</label>
 
         
         div class="col-" style="margin-top: 20px"
           <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
           
           <input type="checkbox" class="btn-check" id="btncheck41" value="41" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck41"> 41</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck41" for="btncheck41"> 41</label>
 
           <input type="checkbox" class="btn-check" id="btncheck42" value="42" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck42"> 42</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck42" for="btncheck42"> 42</label>
 
           <input type="checkbox" class="btn-check" id="btncheck43" value="43" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck43"> 43</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck43" for="btncheck43"> 43</label>
 
           <input type="checkbox" class="btn-check" id="btncheck44" value="44" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck44"> 44</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck44" for="btncheck44"> 44</label>
 
           <input type="checkbox" class="btn-check" id="btncheck45" value="45" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck45"> 45</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck45" for="btncheck45"> 45</label>
 
           <input type="checkbox" class="btn-check" id="btncheck46" value="46" autocomplete="off">
           <label class="btn btn-outline-danger" for="btncheck46"> 46</label>
 
           <input type="checkbox" class="btn-check" id="btncheck47" value="47" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck47"> 47</label>
+          <label class="btn btn-outline-danger" id="labelbtncheck47" for="btncheck47"> 47</label>
 
-          <input type="checkbox" class="btn-check" id="btncheck48" value="48" autocomplete="off">
-          <label class="btn btn-outline-danger" for="btncheck48"> 48</label>
+          <input type="checkbox" class="btn-check"  id="btncheck48" value="48" autocomplete="off">
+          <label class="btn btn-outline-danger" id="labelbtncheck48" for="btncheck48"> 48</label>
 
-          <input type="checkbox" class="btn-check" id="btncheck49 autocomplete="off">
-          <label class="btn btn-success disabled" for="btncheck49"> 49</label>
+          <input type="checkbox" class="btn-check" disabled="true"  id="btncheck49 autocomplete="off">
+          <label class="btn btn-success" id="labelbtncheck49" for="btncheck49"> 49</label>
 
-          <input type="button" class="btn-check" id="btncheck50 autocomplete="off">
-          <label class="btn btn-success disabled" for="btncheck50"> 50</label>
+          <input type="button" class="btn-check" disabled="true" id="btncheck50" autocomplete="off">
+          <label class="btn btn-success" id="labelbtncheck50" for="btncheck50"> 50</label>
     
       div class="col-" style="margin-top: 20px"
-      =form_for
+      =form_for @booking, url:theater_bookings_path, method: "POST" do |f|
         = f.hidden_field :show_id, value: @show.id
         = f.hidden_field :user_id, value: current_user.id
         = f.hidden_field :seats, id: 'seat_numbers', value: ''
         = f.hidden_field :amount, id: 'amount_input', value: ''
-        = link_to "Proceed to booking", "#" ,class:"btn btn-warning"
+        button type="Book" name="Submit" id="submit" disabled="disabled" value="" hidden="true" class="fas fa-check-square btn btn-warning" style="width:10rem;height:3rem;"
 
 javascript:
+  console.log('In SCript')
   const seatsContainer = document.querySelector('.seats_container');
   const btnCheck = document.querySelectorAll('.row.btn-check:not(disabled)');
   const count = document.getElementById('count')
   const total = document.getElementById('total')
 
+  let bs = []
+  bs = document.getElementById('booking_seat').value.slice(1).split(',')
+  bs.pop('[')
+  bs.pop(']')
+  console.log(typeof bs)
+  
+  for (index = 0; index < bs.length; index++){
+    console.log(bs[index]);
+    console.log(("btncheck"+bs[index].trim( ).trim()));
+    document.getElementById("btncheck"+bs[index].trim( ).split(" ")).disabled = true;
+    document.getElementById("labelbtncheck"+bs[index].trim( ).split(" ")).className = "btn btn-success";
+  }
+
   var bookSeats = []
-
-  console.log(bookSeats);
+  
   seatsContainer.addEventListener('click', (e) => {
-    console.log(e.target.value);
-    let s = e.target.value
-    bookSeats.filter(function( element ) {
-      return element !== "undefined";
-   });
-    bookSeats.push(s);
-    data= bookSeats.filter( Number );
-    console.log(data);
-    document.getElementById("count").value = data;
-    document.getElementById("count").innerText = data;
-    var amt = document.getElementById("amount").value
-    var total_amount = document.getElementById("total").innerText = data.length * amt;
-    document.getElementById("seat_numbers").value = bookSeats.join(",");
-    document.getElementById("amount_input").value = total_amount;
-
-
+    if(e.target.classList.contains('btn-check') && !e.target.classList.contains('disabled')){
+      let s = e.target.value
+      e.target.disabled = true;
+      bookSeats.push(s);
+      data= bookSeats.filter( Number );
+      console.log(data)
+      document.getElementById("count").value = data.join(",");
+      document.getElementById("count").innerText = data;
+      var amt = document.getElementById("amount").value
+      var total_amount = document.getElementById("total").innerText = data.length * amt;
+      document.getElementById("seat_numbers").value = data.join(",");
+      document.getElementById("amount_input").value = total_amount;
+      
+      if (data.length > 0){
+        document.getElementById("submit").disabled = false;
+        document.getElementById("submit").hidden = false;
+      } else {
+        document.getElementById("submit").disabled = true;
+      }
+    }
+    
   });
 
 
