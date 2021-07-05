@@ -1,8 +1,12 @@
 class Admin::ScreensController < ApplicationController
   def index
     @theateradmin = TheaterAdmin.where(user: current_user).first
-    @theater = @theateradmin.theater
-    @screens = @theater.screens
+    if @theateradmin.nil?
+      redirect_to root_path
+    else
+      @theater = @theateradmin.theater
+      @screens = @theater.screens
+    end
     @screen = Screen.new
   end
 
