@@ -32,4 +32,7 @@ div class="card" style="width:72rem; text-align: center;"
       div class="mb-3"
         = s.hidden_field :theater_id, value: @theater.id
         = s.button :submit, class: "btn btn-warning"
+      -if flash[:messages]
+        =flash[:messages]
+      end
             

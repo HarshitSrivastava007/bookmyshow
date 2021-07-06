@@ -50,6 +50,9 @@ div class="card" style="width:72rem; text-align: center; "
       = f.text_field :amount
       div class="mb-3" 
         = f.button :submit, :class => "btn btn-warning"
+      -if flash[:messages]
+        =flash[:messages]
+      end
 
 
 

@@ -13,6 +13,7 @@ class Admin::ShowsController < ApplicationController
     if @show.save
       redirect_to admin_shows_path
     else
+      flash.now[:messages] = @show.errors.full_messages[0]
       render :index
     end
   end
