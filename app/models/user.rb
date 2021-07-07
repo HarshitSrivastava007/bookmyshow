@@ -6,7 +6,6 @@ class User < ApplicationRecord
 
          has_many :bookings
 
+         validates :name, :email, :password, :city, :role, :phone, presence: true
 
-  validates :name, presence: true
-  validates :email, presence: true
 end

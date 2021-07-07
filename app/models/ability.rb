@@ -6,12 +6,14 @@ class Ability
     #
 
       user ||= User.new # guest user (not logged in)
-      if user.role == 3
+      if user.role == 1
             can :manage, :all
-            can :access, :rails_admin       
+            can :access, :rails_admin
+            can :       
       end
       if user.role == 2
             can :manage, User
+            can :access, :rails_admin       
       end
     #
     # The first argument to `can` is the action you are giving the user 

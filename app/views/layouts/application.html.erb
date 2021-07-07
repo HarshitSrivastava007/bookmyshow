@@ -31,6 +31,9 @@
             <% if current_user.role == 2 %>
                 <a href="<%= admin_root_path %>" class="btn btn-warning me-2">Manage Theater</a>
             <% end %>
+            <% if current_user.role == 1 %>
+                <a href="<%= rails_admin_path %>" class="btn btn-warning me-2">Manage all</a>
+            <% end %>
               <%= link_to current_user.name, edit_user_registration_path, :class => 'btn btn-warning' %> 	&nbsp;	&nbsp;
               <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'btn btn-warning'  %>
             <% else %>

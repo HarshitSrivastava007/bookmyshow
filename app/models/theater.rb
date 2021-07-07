@@ -3,4 +3,6 @@ class Theater < ApplicationRecord
   has_one_attached :image
   has_many :screens
   has_many :theater_admins
+
+  validates :name, :pincode, presence: true
 end
